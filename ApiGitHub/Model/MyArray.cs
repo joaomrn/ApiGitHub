@@ -1,28 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ApiGitHub.Model
 {
     public class MyArray
     {
-        public int id { get; set; }
-        public string node_id { get; set; }
-        public string name { get; set; }
-        public string full_name { get; set; }
-        public GitHub GitHub { get; set; }
-        public DateTime created_at { get; set; }
-        public DateTime updated_at { get; set; }
-        public DateTime pushed_at { get; set; }
-        public string git_url { get; set; }
-        public string ssh_url { get; set; }
-        public string clone_url { get; set; }
-        public string svn_url { get; set; }
-        public string homepage { get; set; }
-        public int size { get; set; }
-        public int stargazers_count { get; set; }
-        public int watchers_count { get; set; }
-        public string language { get; set; }
+        public int Id { get; set; }
+        public string Node_id { get; set; }
+        public string Name { get; set; }
+        public string Full_name { get; set; }
+        public Owner Owner { get; set; }
+        public DateTime Created_at { get; set; }
+        public DateTime Cpdated_at { get; set; }
+        public DateTime Pushed_at { get; set; }
+        public string Git_url { get; set; }
+        public string Ssh_url { get; set; }
+        public string Clone_url { get; set; }
+        public string Svn_url { get; set; }
+        public string Homepage { get; set; }
+        public int Size { get; set; }
+        public int Stargazers_count { get; set; }
+        public int Watchers_count { get; set; }
+        public string Language { get; set; }
     }
 }

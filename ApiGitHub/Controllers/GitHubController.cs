@@ -17,6 +17,7 @@ namespace ApiGitHub.Controllers
         [HttpGet]
         public IActionResult Get()
         
+        
         {
             var client = new RestClient("https://api.github.com/users/");
             var request = new RestRequest("joaomrn/repos");
@@ -27,7 +28,7 @@ namespace ApiGitHub.Controllers
             var retorno = JsonConvert.DeserializeObject<IEnumerable<MyArray>>(content);
 
             var listaRepositorios = retorno.
-                OrderBy(x => x.created_at)//Ordena pela lista data mais antiga
+                OrderBy(x => x.Created_at)//Ordena pela lista data mais antiga
                 .ToList()//Converte em um List
                 .GetRange(0, 5);//Retorna os 5 primeiros elementos
 
