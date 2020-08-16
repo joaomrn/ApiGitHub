@@ -9,6 +9,8 @@ namespace ApiGitHub.Model
         public string Name { get; set; }
         public string Full_name { get; set; }
         public Owner Owner { get; set; }
+
+        public string Description { get; set; }
         public DateTime Created_at { get; set; }
         public DateTime Cpdated_at { get; set; }
         public DateTime Pushed_at { get; set; }
