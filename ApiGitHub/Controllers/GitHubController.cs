@@ -25,6 +25,9 @@ namespace ApiGitHub.Controllers
             var content = response.Content;
             var retorno = JsonConvert.DeserializeObject<IEnumerable<MyArray>>(content);
 
+            if (retorno == null) return BadRequest();
+            else if(retorno.Count() < 2) return new ObjectResult(retorno.ToList());
+
             var listaRepositorios = retorno.
                 OrderBy(x => x.Created_at)//Ordena pela data mais antiga da lista
                 .ToList()//Converte em um List
