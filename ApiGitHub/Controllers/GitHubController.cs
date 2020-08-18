@@ -28,12 +28,13 @@ namespace ApiGitHub.Controllers
             if (retorno == null) return BadRequest();
             else if(retorno.Count() < 2) return new ObjectResult(retorno.ToList());
 
-            var listaRepositorios = retorno.
-                OrderBy(x => x.Created_at)//Ordena pela data mais antiga da lista
+            var listaRepositorios = retorno
+                .Where(x => x.Language == "C#")
+                .OrderBy(x => x.Created_at)//Ordena pela data mais antiga da lista
                 .ToList()//Converte em um List
                 .GetRange(0, 5);//Retorna os 5 primeiros elementos
 
-            return new ObjectResult(listaRepositorios);
+            return new ObjectResult(JsonConvert.SerializeObject(listaRepositorios));
         }
     }
 }
